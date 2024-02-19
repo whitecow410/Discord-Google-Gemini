@@ -135,7 +135,7 @@ def get_history(user):
 
 @bot.event
 async def on_message(message):
-    if message.author == bot.user:
+    if message.author.bot:
         return
     elif message.guild.id not in [919949309846356008, 1130450248888762478, 1203724433034977280, 767396529311973396]:
         return
