@@ -145,6 +145,13 @@ async def on_message(message):
     if message.content.lower() == '.reset':
         if message.author.id in log:
             del log[message.author.id]
+             embed = discord.Embed(
+             description=f"已刪除{message.author.name}的資料:white_check_mark:",
+             color=discord.Color.random()
+        )
+        channel = bot.get_channel(972378493147029525)  #公開測試的id
+        await channel.send(embed=embed)
+        return
             return
     elif message.content.lower() == '.info':
         embed = discord.Embed(
